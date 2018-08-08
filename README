@@ -1,0 +1,39 @@
+Simple Contacts application using ElasticSearch - Gowtham Ashok
+
+This project uses express.js, elasticsearch.js and mocha.
+
+To run, execute `npm install` and then `npm start`.
+To run tests `npm test`
+
+To change elasticsearch port number, go to elasticsearch.js in this directory.
+
+
+
+Note: Run the tests after running npm start. I had trouble trying to ensure index creation/deletion was done before the tests start to get executed.
+
+Functions:
+
+Get contacts:
+GET /contact?pageSize={}&page={}&query={} and GET /contact/{name} is written and tested
+
+Add contact:
+POST /contact has been tested but has been commented out in code
+
+Update contact:
+PUT /contact/{name} updates existing contact. Has been implemented but need to test it thoroughly
+
+Delete contact:
+DELETE /contact/{name} deletes a contact. It has been implemented but needs to be tested thoroughly
+
+
+**Error checking (invalid phone_number, contact) is checked in the server side, but can be implemented in the elasticsearch methods if needed.
+
+Difficulties:
+Working with promises and elasticsearch
+
+Future Improvements:
+
+Implement promises correctly
+Make a docker container for this app
+Test with Postman, the REST APIs
+Format code and follow best practices for code design
